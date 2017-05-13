@@ -1,0 +1,111 @@
+@import "_common"
+@import "_header"
+@import '_sidebar'
+
+$width = 900px
+$space = 50px
+
+body
+    // background-color darken($light, 10%)
+#header
+    background-color $main
+    a
+        color #FFF
+    
+#logo
+    img
+        display none
+
+.sidebar
+    display none
+
+#mobile-bar
+    &.top
+        background-color transparent
+        box-shadow none
+        .logo
+            display none
+
+#about
+    background-color $main
+    text-align center
+    min-height 350px
+    height calc(100vh - 62px)
+    display flex
+    align-items center
+    position relative
+    .inner
+        max-width $width
+        margin 0 auto
+    h1
+        font-weight 300
+        font-size 3.2em
+        color #fff
+    .button
+        margin 1em 0
+        font-size 1.05em
+        font-weight 600
+        letter-spacing .1em
+        border 1px solid #FFF;
+        &:first-child
+            margin-right 1em
+    .button.start
+        background rgba(255, 255, 255, .2)
+    .button.github
+        background transparent
+    &::after
+        color #FFF
+        content '›'
+        font-size 3em
+        width 3em
+        text-align center
+        position absolute
+        bottom 0
+        left 50%
+        margin-left -1.5em
+        z-index 2
+        transform rotate(90deg);
+#features 
+    text-align center
+    .feature
+        padding 100px 0 110px 0
+        //background #f6f7fa
+        //.feature:nth-of-type(odd) 
+        //    background-color #FFF
+        background linear-gradient(#fff, #FDFDFD, #F7F7F7)
+    h2
+        font-size 3em
+        font-weight 300
+#footer
+    padding $space 0
+    text-align center
+    font-size 1em
+    border-top 1px solid $border
+    color #888
+    background #EFEFEF
+
+@media screen and (max-width: $width)
+    body
+        -webkit-text-size-adjust none
+        font-size 14px
+    .sidebar
+        display block
+    #header
+        display none
+    #mobile-bar
+        display block
+    #about
+        height calc(100vh - 40px)
+        h1
+            font-size 2em
+        h2
+            display block
+        .button
+            font-size .9em
+    #features 
+        .feature
+            padding $space 40px 30px
+    img 
+        width 100%
+        height auto
+    

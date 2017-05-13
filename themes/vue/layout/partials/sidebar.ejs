@@ -1,0 +1,26 @@
+<div class="sidebar">
+    <ul class="main-menu">
+        <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+    </ul>
+    <div class="list">
+        <h2>
+            <%
+                var titles = {
+                    'docs': '文档',
+                    'webpack': 'Webpack',
+                    'express': 'Express',
+                    'koa': 'Koa'
+                };
+            %>
+            <%= titles[type] || type %>
+        </h2>
+        <ul class="menu-root">
+
+            <% site.pages.find({type: type}).sort('order').each(function (p) { %>
+                <li>
+                    <a href="<%- theme.root %><%- p.path %>" class="sidebar-link<%- page.title === p.title ? ' current' : '' %><%- p.is_new ? ' new' : '' %>"><%- p.title %></a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</div>

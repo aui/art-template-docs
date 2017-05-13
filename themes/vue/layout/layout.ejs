@@ -28,7 +28,7 @@
     <body class="<%- isIndex ? '' : 'docs' -%>">
         <div id="mobile-bar" <%- isIndex ? 'class="top"' : '' %>>
             <a class="menu-button"></a>
-            <a class="logo" href="/">art-template</a>
+            <a class="logo" href="<%- theme.root%>"><%= theme.title%></a>
         </div>
         <%- partial('partials/header') %>
         <% if (!isIndex) { %>

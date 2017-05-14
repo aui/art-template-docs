@@ -21,7 +21,7 @@ template.defaults.rules[1].test = /{{[ \t]*([@#]?)(\/?)([\w\W]*?)[ \t]*}}/;
 
 ```js
 var rule = template.defaults.rules[0];
-rule.test = new RegExp(rules.test.source.replace('<%', '<?').replace('%>', '?>'));
+rule.test = new RegExp(rule.test.source.replace('<%', '<\\\?').replace('%>', '\\\?>'));
 ```
 
 ## 添加语法

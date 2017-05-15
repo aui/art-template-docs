@@ -165,7 +165,7 @@ order: 3
 
 **原始语法**
 
-```
+```html
 <% include('./header.art') %>
 <% include('./header.art', data) %>
 ```
@@ -199,3 +199,4 @@ template.defaults.imports.timestamp = function(value){return value * 1000};
 <%= $imports.dateFormat($imports.timestamp(date), 'yyyy-MM-dd hh:mm:ss') %>
 ```
 
+> 如果想修改 `{{` `}}` 与 `<%` `%>`，请参考 [解析规则](rules.html)

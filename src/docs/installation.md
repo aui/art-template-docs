@@ -12,6 +12,10 @@ npm install art-template --save
 
 ## 浏览器
 
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/art-template/4.9.0/template-web.js"></script>
+```
+
 下载：[lib/template-web.js](https://raw.githubusercontent.com/aui/art-template/master/lib/template-web.js)（gzip: 6kb）
 
 **兼容**

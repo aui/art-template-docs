@@ -165,7 +165,7 @@ order: 3
 
 **原始语法**
 
-```
+```html
 <% include('./header.art') %>
 <% include('./header.art', data) %>
 ```

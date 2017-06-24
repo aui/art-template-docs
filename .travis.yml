@@ -1,19 +1,13 @@
 language: node_js
-
 sudo: false
-
 node_js:
   - "6"
-
 cache:
-  apt: true
   directories:
     - node_modules
-
 env:
  global:
    - GH_REF: git@github.com:aui/art-template.git
-
 addons:
   apt:
     sources:
@@ -21,14 +15,11 @@ addons:
     packages:
       - g++-4.8
   ssh_known_hosts: github.com
-
 script:
   - npm run build
-
 branches:
   only:
   - master
-
 after_script:
   - cd ./public
   - git init

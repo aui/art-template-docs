@@ -1,0 +1,17 @@
+menu:
+  docs: Docs
+  webpack: Webpack
+  express: Express
+  koa: Koa
+
+index:
+  get_started: Docs
+  source: Source
+
+page:
+  contents: Contents
+  back_to_top: Back to Top
+  improve: Improve this doc
+  prev: Prev
+  next: Next
+  last_updated: "Last updated: %s"

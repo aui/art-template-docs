@@ -1,0 +1,43 @@
+<div id="about">
+  <div class="inner">
+    <h1><%- page.title %></h1>
+    <h2>
+      <%- page.description %>
+    </h2>
+    <div class="buttons">
+      <a class="button start" href="docs/"><%= __('index.get_started')  %></a>
+      <a class="button github" href="<%= page.github %>" target="_blank"><%= __('index.source') %></a>
+    </div>
+  </div>
+</div>
+
+<div id="features">
+  <% page.features.forEach(function(feature){ %>
+  <section class="feature">
+    <h2>
+      <%- feature.title %>
+    </h2>
+    <% feature.content.forEach(function(item){ %>
+      <p><%- item.replace(/\$\{theme\.root\}/g, theme.root) %></p>
+    <% }) %>
+  </section>
+  <% }) %>
+</div>
+
+<div id="github">
+  <%- partial('partial/share') %>
+</div>
+
+<script>
+  var topScrolled = false
+  window.addEventListener('scroll', function () {
+    var pageHeight = window.outerHeight;
+    if (window.pageYOffset > pageHeight && !topScrolled) {
+      topScrolled = true
+      document.getElementById('mobile-bar').classList.remove('top')
+    } else if (window.pageYOffset <= pageHeight && topScrolled) {
+      topScrolled = false
+      document.getElementById('mobile-bar').classList.add('top')
+    }
+  })
+</script>

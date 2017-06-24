@@ -1,0 +1,42 @@
+#sidebar
+  width: $sidebar-width
+  float: left
+  padding-bottom: 40px
+  opacity: 0.8
+  margin-left: $sidebar-width * -1
+  display: none
+  position: fixed
+  top: 60px
+  bottom: 0
+  overflow-x: hidden
+  overflow-y: auto
+
+  @media $mq-normal
+    display: block
+.sidebar
+  margin-top: 40px
+  li
+    list-style: none
+    line-height: 1.9em
+  a
+    display: block
+    color: $color-default
+    text-decoration: none
+    &.current
+      color: $color-art
+      font-weight: bold
+.sidebar-title
+  margin-top: 40px
+  padding: 10px 0
+  font-family: $font-title
+  font-weight: bold
+  color: $color-link
+  display: inline-block
+  border-top: 1px solid $color-border
+  line-height: 1
+
+.sidebar-link
+  display: block
+.sidebar-sub
+  padding-left: 1em
+  font-size: 0.85em

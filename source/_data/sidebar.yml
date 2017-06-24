@@ -1,0 +1,10 @@
+docs:
+  - index.html
+  - installation.html
+  - syntax.html
+  - debug.html
+  - imports.html
+  - rules.html
+  - minimize.html
+  - options.html
+  - api.html

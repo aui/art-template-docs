@@ -7,8 +7,10 @@ cache:
     - node_modules
 env:
  global:
-   - CXX=g++-4.8
+   - CXX: g++-4.8
    - GH_REF: git@github.com:aui/art-template.git
+install:
+  - npm install
 addons:
   apt:
     sources:

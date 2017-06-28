@@ -12,7 +12,6 @@ art-template 内建调试器，能够捕获到语法与运行错误，并且支�
 
 ```json
 {
-    "bail": false,
     "cache": false,
     "minimize": false,
     "compileDebug": true

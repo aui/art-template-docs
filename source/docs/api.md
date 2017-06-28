@@ -4,7 +4,7 @@ categories: docs
 comments: false
 ---
 
-##	template(filename, content)
+## template(filename, content)
 
 根据模板名渲染模板。
 
@@ -37,7 +37,7 @@ template('/welcome.art', {
 });
 ```
 
-##	.compile(source, options)
+## .compile(source, options)
 
 编译模板并返回一个渲染函数。
 
@@ -53,7 +53,7 @@ var render = template.compile('hi, <%=value%>.');
 var html = render({value: 'aui'});
 ```
 
-##	.render(source, data, options)
+## .render(source, data, options)
 
 编译并返回渲染结果。
 
@@ -68,13 +68,13 @@ var html = render({value: 'aui'});
 var html = template.render('hi, <%=value%>.', {value: 'aui'});
 ```
 
-##	.defaults
+## .defaults
 
 模板引擎默认配置。参考 [选项](./options.html)。
 
 * **类型**：`{Object}`
 
-##  .extension
+## .extension
 
 给 NodeJS `require.extensions` 注册的模板渲染函数。 
 

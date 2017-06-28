@@ -15,6 +15,7 @@ art-template 是一个简约、超快的模板引擎。
 6. 支持模板继承与子模板
 7. 浏览器版本仅 6KB 大小
 
+<!--这一句非中文版文档请删除-->
 [art-template@4.0 新特性一览](https://github.com/aui/art-template/issues/369)
 
 ## 模板

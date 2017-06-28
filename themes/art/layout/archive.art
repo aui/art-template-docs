@@ -3,7 +3,7 @@
   <div class="wrapper">
     <div class="inner">
       {{each page.posts post}}
-        {{if loop.index == 1}}
+        {{if $index == 1}}
           {{@partial('partial/post', {post: post})}}
         {{else}}
           <article class="article post archive-post" itemscope itemtype="http://schema.org/Article">

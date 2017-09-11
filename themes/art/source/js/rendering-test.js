@@ -340,10 +340,6 @@ var runTest = function (callback) {
 
     });
 
-    var log = function (message) {
-        document.getElementById('log').innerHTML = message;
-    };
-
     var tester = function (target) {
 
 
@@ -359,14 +355,11 @@ var runTest = function (callback) {
 
 
         if (!list.length) {
-            log('done');
             callback();
             return;
         }
 
         target = list.shift();
-
-        log('run: ' + target.name);
 
         setTimeout(function () {
             tester(target);
@@ -375,7 +368,6 @@ var runTest = function (callback) {
     };
 
     var target = list.shift();
-    log('run: ' + target.name);
     tester(target);
 
 };
@@ -394,6 +386,9 @@ function app(selector) {
 <h1>Rendering test</h1>
 <div class="header">
     <p class="item">
+        <button id="button-start" class="button">Run Test&raquo;</button>
+        <button id="button-restart" class="button" style="display:none">Restart</button>
+        <span>config: </span>
         <label><input type="number" value="{{length}}" onchange="restart('length', this.value)"> list</label>
         <strong>×</strong>
         <label><input type="number" value="{{calls}}" onchange="restart('calls', this.value)"> calls</label>
@@ -401,11 +396,6 @@ function app(selector) {
         <label><input type="checkbox" checked disabled> cache</label>
     </p>
     <p class="item">
-        <button id="button-start" class="button">Run Test&raquo;</button>
-        <button id="button-restart" class="button" style="display:none">Restart</button>
-        <span id="log">
-            
-        </span>
     </p>
 </div>
 <div id="test-container" style="min-width: 400px; margin: 0 auto"></div>`);

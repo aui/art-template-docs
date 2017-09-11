@@ -51,18 +51,6 @@ note-warn = hsl(0, 100%, 50%)
   &:hover
     color: $color-link-hover
 
-.article-edit-link
-  float: right
-  color: #bbb
-  font-size: 24px
-  line-height: 36px
-  transition: 0.2s
-  display: none
-  &:hover
-    color: $color-link-hover
-  @media $mq-normal
-    display: block
-
 .article-anchor
   margin-left: 10px
   display: none
@@ -344,6 +332,10 @@ $article-footer-link
 .article-footer-updated
   font-size: 0.9em
 
+.article-edit-link
+  color: $color-gray
+  text-decoration: underline
+  
 #comments
   @media print
     display: none

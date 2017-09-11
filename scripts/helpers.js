@@ -18,7 +18,7 @@ hexo.extend.helper.register('page_nav', function () {
     var prefix = 'sidebar.' + categories + '.';
 
     if (!sidebar) {
-        return;
+        return '';
     }
 
     var keys = sidebar;

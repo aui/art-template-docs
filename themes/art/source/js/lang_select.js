@@ -2,12 +2,11 @@
   'use strict';
 
   function changeLang(){
-    var lang = this.value;
+    var root = this.dataset.root;
+    var lang = this.dataset.lang;
     var canonical = this.dataset.canonical;
-    if (lang === 'en') lang = '';
-    if (lang) lang += '/';
-
-    location.href = '/' + lang + canonical;
+    var target = this.value === 'en' ? '' : this.value + '/';
+    location.href = root + target + canonical;
   }
 
   document.getElementById('lang-select').addEventListener('change', changeLang);

@@ -226,15 +226,15 @@ hexo.extend.helper.register('lunr_index', function (data) {
     return JSON.stringify(index.toJSON());
 });
 
-hexo.extend.helper.register('canonical_path_for_nav', function () {
-    var path = this.page.canonical_path;
+// hexo.extend.helper.register('canonical_path_for_nav', function () {
+//     var path = this.page.canonical_path;
 
-    if (startsWith(path, 'docs/') || startsWith(path, 'api/')) {
-        return path;
-    } else {
-        return '';
-    }
-});
+//     if (startsWith(path, 'docs/') || startsWith(path, 'api/')) {
+//         return path;
+//     } else {
+//         return '';
+//     }
+// });
 
 hexo.extend.helper.register('lang_name', function (lang) {
     var data = this.site.data.languages[lang];

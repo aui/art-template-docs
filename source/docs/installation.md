@@ -16,7 +16,7 @@ npm install art-template --save
 
 **兼容**
 
-IE8+（IE8 需要 [es5-shim](https://github.com/es-shims/es5-shim) 才能运行。[示例](./example/web-ie-compatible/index.html)）
+IE8+（IE8 需要补丁才能运行。[示例](https://github.com/aui/art-template/blob/master/example/web-ie-compatible/index.html)）
 
 **差异**
 

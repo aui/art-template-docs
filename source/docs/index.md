@@ -1,28 +1,23 @@
 ---
-title: 介绍
+title: Introduction
 categories: docs
 comments: false
 ---
-art-template 是一个简约、超快的模板引擎。
+art-template is a simple and superfast templating engine that optimizes template rendering speed by scope pre-declared technique, hence achieving runtime performance which is close to the limits of JavaScript. At the same time, it supports both NodeJS and browser. [speed test online](../rendering-test/).
 
-它采用作用域预声明的技术来优化模板渲染速度，从而获得接近 JavaScript 极限的运行性能，并且同时支持 NodeJS 和浏览器。[在线速度测试](../rendering-test/)。
+## feature
 
-## 特性
+1. performance is close to the JavaScript rendering limits
+2. debugging friendly. Grammar errors or runtime errors will be located accurately at which line of template. Support setting breakpoint in templating files (Webpack Loader)
+3. Support Express, Koa, Webpack
+4. Support template inheritance and sub template
+5. browser version is only 6KB
 
-1. 拥有接近 JavaScript 渲染极限的的性能
-2. 调试友好：语法、运行时错误日志精确到模板所在行；支持在模板文件上打断点（Webpack Loader）
-5. 支持 Express、Koa、Webpack
-6. 支持模板继承与子模板
-7. 浏览器版本仅 6KB 大小
+## template
 
-<!--这一句非中文版文档请删除-->
-[art-template@4.0 新特性一览](https://github.com/aui/art-template/issues/369)
+art-template simultaneously supports two syntax of template. Standard syntax allows templates to be easier to read and write. While original syntax has powerful logical processing ability.
 
-## 模板
-
-art-template 同时支持两种模板语法。标准语法可以让模板更容易读写；原始语法具有强大的逻辑处理能力。
-
-**标准语法**
+**standard syntax**
 
 ```html
 {{if user}}
@@ -30,7 +25,7 @@ art-template 同时支持两种模板语法。标准语法可以让模板更容�
 {{/if}}
 ```
 
-**原始语法**
+**original syntax**
 
 ```html
 <% if (user) { %>
@@ -38,9 +33,9 @@ art-template 同时支持两种模板语法。标准语法可以让模板更容�
 <% } %>
 ```
 
-原始语法兼容 [EJS](http://ejs.co)、[Underscore](http://underscorejs.org/#template)、[LoDash](https://lodash.com/docs/#template) 模板。
+Original syntax is compatible with [EJS](http://ejs.co), [Underscore](http://underscorejs.org/#template), [LoDash](https://lodash.com/docs/#template) templates.
 
-## 渲染模板
+## render template
 
 ```js
 var template = require('art-template');
@@ -51,15 +46,15 @@ var html = template(__dirname + '/tpl-user.art', {
 });
 ```
 
-## 核心方法
+## core method
 
 ```js
-// 基于模板名渲染模板
+// render template basing on template name
 template(filename, data);
 
-// 将模板源代码编译成函数
+// compile source of template as function
 template.compile(source, options);
 
-// 将模板源代码编译成函数并立刻执行
+// compile source of template as function and immediately invoke it
 template.render(source, data, options);
 ```

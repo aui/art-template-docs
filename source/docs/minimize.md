@@ -1,31 +1,31 @@
 ---
-title: 压缩页面
+title: Minimize
 categories: docs
 comments: false
 ---
 
 `template.defaults.minimize`
 
-art-template 内建的压缩器可以压缩 HTML、JS、CSS，它在编译阶段运行，因此完全不影响渲染速度，并且能够加快网络传输。
+Built-in minifier of art-template can minimize HTML, JS and CSS, which happens in compilation phase. So it totally has no effect on rendering speed and moreover speeds up network transmission.
 
-## 开启
+## Minimize mode
 
 ```js
 template.defaults.minimize = true;
 ```
 
-## 配置
+## Configuration
 
-参见：<https://github.com/kangax/html-minifier>
+Refer to: <https://github.com/kangax/html-minifier>
 
-**默认配置**
+**default configuration**
 
 ```js
 template.defaults.htmlMinifierOptions = {
     collapseWhitespace: true,
     minifyCSS: true,
     minifyJS: true,
-    // 运行时自动合并：rules.map(rule => rule.test)
+    // automatically merged at runtime: rules.map(rule => rule.test)
     ignoreCustomFragments: []
 };
 ```

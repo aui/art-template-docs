@@ -1,14 +1,14 @@
 ---
-title: 调试
+title: Debug
 categories: docs
 comments: false
 ---
 
 `template.defaults.debug`
 
-art-template 内建调试器，能够捕获到语法与运行错误，并且支持自定义的语法。在 NodeJS 中调试模式会根据环境变量自动开启：`process.env.NODE_ENV !== 'production'`
+art-template has built-in debugger. It can catch syntax and runtime errors. In addition, it supports custom syntax. In NodeJS, debugging mode will be automatically opened according to the environment variable: `process.env.NODE_ENV !== 'production'`
 
-设置 `template.defaults.debug=true` 后，等同于：
+Setting `template.defaults.debug=true` is equivalent to:
 
 ```json
 {
@@ -18,4 +18,4 @@ art-template 内建调试器，能够捕获到语法与运行错误，并且支�
 }
 ```
 
-更多参见 [选项](./options.html)。
+More for [options](./options.html).

@@ -1,32 +1,32 @@
 ---
-title: 解析规则
+title: Parsing rules
 categories: docs
 comments: false
 ---
 
 `template.defaults.rules`
 
-art-template 可以自定义模板解析规则，默认配置了原始语法与标准语法。
+You can customize template parsing rules in art-template. Standard syntax and orginal syntax is configured by default.
 
-## 修改界定符
+## Modify delimiters
 
 ```js
-// 原始语法的界定符规则
+// delimiter rules of original syntax
 template.defaults.rules[0].test = /<%(#?)((?:==|=#|[=-])?)[ \t]*([\w\W]*?)[ \t]*(-?)%>/;
-// 标准语法的界定符规则
+// delimiter rules of standard syntax
 template.defaults.rules[1].test = /{{([@#]?)[ \t]*(\/?)([\w\W]*?)[ \t]*}}/;
 ```
 
-它们是一个正则表达式，你可以只修改界定符部分。例如修改 `<%` `%>` 为 `<?` `?>`：
+They are regular expressions and you can only modify the delimiter part. For example, modify `<%` `%>` to `<?` `?>`:
 
 ```js
 var rule = template.defaults.rules[0];
 rule.test = new RegExp(rule.test.source.replace('<%', '<\\\?').replace('%>', '\\\?>'));
 ```
 
-## 添加语法
+## Add syntax
 
-从一个简单的例子说起，让模板引擎支持 ES6 `${name}` 模板字符串的解析：
+Let's start with a simple example that make template engine support parse of template strings `${name}` of ES6:
 
 ```js
 template.defaults.rules.push({
@@ -40,14 +40,14 @@ template.defaults.rules.push({
 });
 ```
 
-其中 `test` 是匹配字符串正则，`use` 是匹配后的调用函数。关于 `use` 函数：
+`test` is a regular expression which matches strings and `use` is a callback function after matching. About `use` function:
 
-* 参数：一个参数为匹配到的字符串，其余的参数依次接收 `test` 正则的分组匹配内容
-* 返回值：必须返回一个对象，包含 `code` 与 `output` 两个字段：
-    * `code` 转换后的 JavaScript 语句
-    * `output` 描述 `code` 的类型，可选值：
-        * `'escape'` 编码后进行输出
-        * `'raw'` 输出原始内容
-        * `false` 不输出任何内容
+* parameters: first parameter is the matching string, and others are content of capturing group of `test` regular expression
+* return value: MUST return an object containing `code` and `output` properties:
+    * `code` transformed JavaScript statements 
+    * `output` describe type of `code`, optional value:
+        * `'escape'` output after encoding
+        * `'raw'` output raw content
+        * `false` output nothing
 
-值得一提的是，语法规则对渲染速度没有影响，模板引擎编译器会帮你优化渲染性能。
+It's worth mentioning that syntax rules have no effect on rendering speed and template parser will help you optimize rendering performance.

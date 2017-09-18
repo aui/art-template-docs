@@ -6,14 +6,14 @@ comments: false
 
 ## template(filename, content)
 
-根据模板名渲染模板。
+Render templates according to template name.
 
-* **参数**：
+* **Parameters**：
     * `{string} filename`
     * `{Object,string} content`
-* **返回值**：
-    * 如果 `content` 为 `Object`，则渲染模板并返回 `string`
-    * 如果 `content` 为 `string`，则编译模板并返回 `function`
+* **Return**：
+    * if `content` is `Object`，render template and return `string`
+    * if `content` is `string`，compile template and return `function`
 
 ```js
 var html = template('/welcome.art', {
@@ -21,11 +21,11 @@ var html = template('/welcome.art', {
 });
 ```
 
-> 浏览器版本无法加载外部文件，`filename` 为存放模板的元素 `id`
+> browser version can not load external file. `filename` is the element `id` of template
 
-**示例**
+**Examples**
 
-编译模板并缓存。
+Compile templates and cache it.
 
 ```js
 // compile && cache
@@ -39,14 +39,14 @@ template('/welcome.art', {
 
 ## .compile(source, options)
 
-编译模板并返回一个渲染函数。
+Compile templates and return a rendering function.
 
-* **参数**：
+* **Parameters**：
     * `{string} source`
     * `{Object} options`
-* **返回值**：`{function}`
+* **Return**：`{function}`
 
-**示例**
+**Examples**
 
 ```js
 var render = template.compile('hi, <%=value%>.');
@@ -55,14 +55,14 @@ var html = render({value: 'aui'});
 
 ## .render(source, data, options)
 
-编译并返回渲染结果。
+Compile and return rendering results.
 
-* **参数**：
+* **Parameters**：
     * `{string} source`
     * `{Object} options`
-* **返回值**：`{string}`
+* **Return**：`{string}`
 
-**示例**
+**Examples**
 
 ```js
 var html = template.render('hi, <%=value%>.', {value: 'aui'});
@@ -70,19 +70,19 @@ var html = template.render('hi, <%=value%>.', {value: 'aui'});
 
 ## .defaults
 
-模板引擎默认配置。参考 [选项](./options.html)。
+Default configuration of template engine. Refer to [Options](./options.html).
 
-* **类型**：`{Object}`
+* **Type**：`{Object}`
 
 ## .extension
 
-给 NodeJS `require.extensions` 注册的模板渲染函数。 
+Template rendering function registering for NodeJS `require.extensions`.
 
-* **类型**：`{function}`
+* **Type**：`{function}`
 
-**示例**
+**Examples**
 
-加载 `.ejs` 模板：
+Load `.ejs` templates:
 
 ```js
 var template = require('art-template');
@@ -92,7 +92,7 @@ var view = require('./index.ejs');
 var html = view(data); 
 ```
 
-`.art` 默认被注册，可以直接使用：
+`.art` is registered by default and you can use it directly:
 
 ```js
 var template = require('art-template');
@@ -100,4 +100,4 @@ var view = require('./index.art');
 var html = view(data); 
 ```
 
-需要注意的是：此功能仅对 NodeJS 生效，如果要在浏览器中使用模板文件渲染功能，请使用 Webpack [art-template-loader](../webpack)。
+It should be noted that this functionality only works for NodeJS. If you want to use template rendering functionality, please use Webpack [art-template-loader](../webpack).

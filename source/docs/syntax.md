@@ -1,16 +1,16 @@
 ---
-title: 语法
+title: Syntax
 categories: docs
 comments: false
 ---
 
-art-template 支持标准语法与原始语法。标准语法可以让模板易读写，而原始语法拥有强大的逻辑表达能力。
+art-template supports standard syntax and original syntax. Standard syntax allows templates to be easier to read and write. While original syntax has powerful logical processing ability.
 
-标准语法支持基本模板语法以及基本 JavaScript 表达式；原始语法支持任意 JavaScript 语句，这和 EJS 一样。
+Standard syntax supports basic templating syntax and JavaScript expression. Original syntax supports arbitrary JavaScript statement, the same as EJS.
 
-## 输出
+## Output
 
-**标准语法**
+**standard syntax**
 
 ```html
 {{value}}
@@ -21,7 +21,7 @@ art-template 支持标准语法与原始语法。标准语法可以让模板易�
 {{a + b}}
 ```
 
-**原始语法**
+**original syntax**
 
 ```html
 <%= value %>
@@ -32,47 +32,47 @@ art-template 支持标准语法与原始语法。标准语法可以让模板易�
 <%= a + b %>
 ```
 
-模板一级特殊变量可以使用 `$data` 加下标的方式访问：
+You can use `$data` with bracket notation to access a first-class variable of templates (such as keyword, reserved word, etc):
 
 ```html
 {{$data['user list']}}
 ```
 
-## 原文输出
+## Raw output
 
-**标准语法**
+**standard syntax**
 
 ```html
 {{@value}}
 ```
 
-**原始语法**
+**original syntax**
 
 ```html
 <%- value %>
 ```
 
-> 原文输出语句不会对 `HTML` 内容进行转义处理，可能存在安全风险，请谨慎使用。
+> raw output will not escape the content of `HTML`, so there may be security problems. Please be careful.
 
-## 条件
+## Condition
 
-**标准语法**
+**standard syntax**
 
 ```html
 {{if value}} ... {{/if}}
 {{if v1}} ... {{else if v2}} ... {{/if}}
 ```
 
-**原始语法**
+**original syntax**
 
 ```html
 <% if (value) { %> ... <% } %>
 <% if (v1) { %> ... <% } else if (v2) { %> ... <% } %>
 ```
 
-## 循环
+## Loop
 
-**标准语法**
+**standard syntax**
 
 ```html
 {{each target}}
@@ -80,7 +80,7 @@ art-template 支持标准语法与原始语法。标准语法可以让模板易�
 {{/each}}
 ```
 
-**原始语法**
+**original syntax**
 
 ```html
 <% for(var i = 0; i < target.length; i++){ %>
@@ -88,40 +88,40 @@ art-template 支持标准语法与原始语法。标准语法可以让模板易�
 <% } %>
 ```
 
-1. `target` 支持 `array` 与 `object` 的迭代，其默认值为 `$data`。
-2. `$value` 与 `$index` 可以自定义：`{% raw %}{{each target val key}}{% endraw %}`。
+1. `target` supports iteration of `array` and `object`, and its default value is `$data`.
+2. `$value` and `$index` can be customized: `{% raw %}{{each target val key}}{% endraw %}`.
 
-## 变量
+## Variable
 
-**标准语法**
+**standard syntax**
 
 ```html
 {{set temp = data.sub.content}}
 ```
 
-**原始语法**
+**original syntax**
 
 ```html
 <% var temp = data.sub.content; %> 
 ```
 
-## 模板继承
+## Template inheritance
 
-**标准语法**
+**standard syntax**
 
 ```html
 {{extend './layout.art'}}
 {{block 'head'}} ... {{/block}}
 ```
 
-**原始语法**
+**original syntax**
 
 ```html
 <% extend('./layout.art') %>
 <% block('head', function(){ %> ... <% }) %>
 ```
 
-模板继承允许你构建一个包含你站点共同元素的基本模板“骨架”。范例：
+Template inheritance allows you to build a basic templating "skeleton" that contains common parts of your site. Example:
 
 ```html
 <!--layout.art-->
@@ -156,50 +156,50 @@ art-template 支持标准语法与原始语法。标准语法可以让模板易�
 {{/block}}
 ```
 
-渲染 index.art 后，将自动应用布局骨架。
+After rendering index.art, layout skeleton will be automatically applied.
 
-## 子模板
+## Sub template
 
-**标准语法**
+**standard syntax**
 
 ```html
 {{include './header.art'}}
 {{include './header.art' data}}
 ```
 
-**原始语法**
+**original syntax**
 
 ```html
 <% include('./header.art') %>
 <% include('./header.art', data) %>
 ```
 
-1. `data` 数默认值为 `$data`；标准语法不支持声明 `object` 与 `array`，只支持引用变量，而原始语法不受限制。
-2. art-template 内建 HTML 压缩器，请避免书写 HTML 非正常闭合的子模板，否则开启压缩后标签可能会被意外“优化。
+1. `data` value is `$data` by default. Standard syntax doesn't support declaration of `object` and `array` but reference variable. However, original syntax is no limits.
+2. art-template has built-in HTML minifier and please avoid writing abnormal closing tag in sub templates. Otherwise, tags may be unexpectedly "optimized" when `minimize` option is open.
 
-## 过滤器
+## Filters
 
-**注册过滤器**
+**register filters**
 
 ```js
 template.defaults.imports.dateFormat = function(date, format){/*[code..]*/};
 template.defaults.imports.timestamp = function(value){return value * 1000};
 ```
 
-过滤器函数第一个参数接受目标值。
+The first parameter of filter function accepts target value.
 
-**标准语法**
+**standard syntax**
 
 ```html
 {{date | timestamp | dateFormat 'yyyy-MM-dd hh:mm:ss'}}
 ```
 
-`{% raw %}{{value | filter}}{% endraw %}` 过滤器语法类似管道操作符，它的上一个输出作为下一个输入。
+`{% raw %}{{value | filter}}{% endraw %}` filter syntax is similar to pipe operator. Its last output will be the next input.
 
-**原始语法**
+**original syntax**
 
 ```html
 <%= $imports.dateFormat($imports.timestamp(date), 'yyyy-MM-dd hh:mm:ss') %>
 ```
 
-> 如果想修改 `{% raw %}{{{% endraw %}` `{% raw %}}}{% endraw %}` 与 `<%` `%>`，请参考 [解析规则](rules.html)。
+> If you want to modify `{% raw %}{{{% endraw %}` `{% raw %}}}{% endraw %}` and `<%` `%>`,please refer to [rules](rules.html).

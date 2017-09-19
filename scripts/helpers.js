@@ -116,7 +116,8 @@ hexo.extend.helper.register('doc_sidebar', function (className) {
     }
 
     var pages = this.site.pages.find({
-        categories: categories
+        categories: categories,
+        lang: this.page.lang
     }).toArray();
 
     pages.sort(function(a, b) {

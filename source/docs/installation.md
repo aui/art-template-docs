@@ -1,5 +1,5 @@
 ---
-title: 安装
+title: Installation
 categories: docs
 comments: false
 ---
@@ -10,17 +10,17 @@ comments: false
 npm install art-template --save
 ```
 
-## 在浏览器中实时编译
+## Real-time compilation in browser
 
-下载：[lib/template-web.js](https://raw.githubusercontent.com/aui/art-template/master/lib/template-web.js)（gzip: 6kb）
+download：[lib/template-web.js](https://raw.githubusercontent.com/aui/art-template/master/lib/template-web.js)（gzip: 6kb）
 
-**兼容**
+**compatibility**
 
-IE8+（IE8 需要补丁才能运行。[示例](https://github.com/aui/art-template/blob/master/example/web-ie-compatible/index.html)）
+IE8+（IE8 needs patch for execution. [example](https://github.com/aui/art-template/blob/master/example/web-ie-compatible/index.html)）
 
-**差异**
+**difference**
 
-因为浏览器不支持文件系统，所以 `template(filename, data)` 不支持传入文件路径，它内部使用 `document.getElementById(filename).innerHTML` 来获取模板，例如：
+Because browser doesn't support file system, so `template(filename, data)` doesn't support passing in file paths, and inside the method it uses `document.getElementById(filename).innerHTML` to obtain templates. For instance:
 
 ```html
 <script src="lib/template-web.js"></script>
@@ -31,11 +31,11 @@ IE8+（IE8 需要补丁才能运行。[示例](https://github.com/aui/art-templa
 </script>
 ```
 
-## 在浏览器中预编译
+## Pre-compilation in browser
 
-使用 Webpack 的 Loader: [art-template-loader](../webpack)。
+use loader of webpack: [art-template-loader](../webpack).
 
-## 插件
+## Plugins
 
 * Webpack: [art-template-loader](../webpack)
 * Express: [express-art-template](../express)

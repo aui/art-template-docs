@@ -39,4 +39,4 @@ You can pass [art-template options](../docs/options.html).
 
 ## Github
 
-Home: <https://github.com/aui/express-art-template
+Home: <https://github.com/aui/express-art-template>

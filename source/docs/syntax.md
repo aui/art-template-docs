@@ -43,7 +43,7 @@ You can use `$data` with bracket notation to access a first-class variable of te
 **standard syntax**
 
 ```html
-{{@value}}
+{{@ value }}
 ```
 
 **original syntax**

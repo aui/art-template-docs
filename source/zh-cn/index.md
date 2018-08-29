@@ -7,7 +7,7 @@ comments: false
 features:
 - title: 快速
   content: 
-  - 在编译阶段优化，带来近乎极限的运行速度。<a href="../../rendering-test/">在线测试››</a>
+  - 在编译阶段优化，带来近乎极限的运行速度。<a href="../rendering-test/">在线测试››</a>
   - <img width="884" height="181" srcset="${theme.root}images/chart@2x.png 2x" src="${theme.root}images/chart.png"
         alt="chart">
 - title: 调试

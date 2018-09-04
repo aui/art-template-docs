@@ -78,7 +78,7 @@ var html = template.render('hi, <%=value%>.', {value: 'aui'});
 
 给 NodeJS `require.extensions` 注册的模板渲染函数。 
 
-* **类型**：`{function}`
+* **类型**：`{Object}`
 
 **示例**
 

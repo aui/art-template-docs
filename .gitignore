@@ -5,3 +5,4 @@ node_modules
 npm-debug.log
 db.json
 public
+package-lock.json

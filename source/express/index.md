@@ -4,7 +4,7 @@ categories: express
 comments: false
 ---
 
-art-template for express.
+art-template for express 4.x.
 
 ## Install
 
@@ -18,11 +18,16 @@ npm install --save express-art-template
 ```js
 var express = require('express');
 var app = express();
+
+// view engine setup
 app.engine('art', require('express-art-template'));
 app.set('view options', {
     debug: process.env.NODE_ENV !== 'production'
 });
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'art');
 
+// routes
 app.get('/', function (req, res) {
     res.render('index.art', {
         user: {

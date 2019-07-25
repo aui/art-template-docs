@@ -19,10 +19,6 @@ install:
 #   ssh_known_hosts: github.com
 script:
   - npm run build
-branches:
-  only:
-  - master
-after_script:
   - cd ./public
   - git init
   - git config user.name "aui"
@@ -30,3 +26,6 @@ after_script:
   - git add .
   - git commit -m "[CI] update docs"
   - git push --force --quiet "https://${GH_TOKEN}@github.com/aui/art-template.git" master:gh-pages
+branches:
+  only:
+  - master

@@ -12,7 +12,7 @@ npm install art-template --save
 
 ## 在浏览器中实时编译
 
-下载：[lib/template-web.js](https://raw.githubusercontent.com/aui/art-template/master/lib/template-web.js)（gzip: 6kb）
+下载：[template-web.js](https://unpkg.com/art-template/lib/template-web.js)（gzip: 6kb）
 
 **兼容**
 

@@ -12,7 +12,7 @@ npm install art-template --save
 
 ## Real-time compilation in browser
 
-download：[lib/template-web.js](https://raw.githubusercontent.com/aui/art-template/master/lib/template-web.js)（gzip: 6kb）
+download：[template-web.js](https://unpkg.com/art-template/lib/template-web.js)（gzip: 6kb）
 
 **compatibility**
 

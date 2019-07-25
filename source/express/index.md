@@ -24,6 +24,7 @@ app.engine('art', require('express-art-template'));
 app.set('view', {
     debug: process.env.NODE_ENV !== 'production'
 });
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'art');
 
 // routes
@@ -43,4 +44,4 @@ You can pass [art-template options](../docs/options.html).
 
 ## Github
 
-Home: <https://github.com/aui/express-art-template
+Home: https://github.com/aui/express-art-template

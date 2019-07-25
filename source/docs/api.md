@@ -78,7 +78,7 @@ Default configuration of template engine. Refer to [Options](./options.html).
 
 Template rendering function registering for NodeJS `require.extensions`.
 
-* **Type**：`{function}`
+* **Type**：`{Object}`
 
 **Examples**
 

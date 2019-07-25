@@ -5,7 +5,7 @@ comments: false
 ---
 art-template 是一个简约、超快的模板引擎。
 
-它采用作用域预声明的技术来优化模板渲染速度，从而获得接近 JavaScript 极限的运行性能，并且同时支持 NodeJS 和浏览器。[在线速度测试](../rendering-test/)。
+它采用作用域预声明的技术来优化模板渲染速度，从而获得接近 JavaScript 极限的运行性能，并且同时支持 NodeJS 和浏览器。[在线速度测试](../../rendering-test/)。
 
 ## 特性
 

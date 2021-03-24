@@ -21,7 +21,7 @@ var app = express();
 
 // view engine setup
 app.engine('art', require('express-art-template'));
-app.set('view', {
+app.set('view options', {
     debug: process.env.NODE_ENV !== 'production'
 });
 app.set('views', path.join(__dirname, 'views'));
